@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: strapi-configuration
+  labels:
+    app: strapi
+data:
+  STRAPI_DB: awesomedb
+  STRAPI_USER: amazinguser
+  STRAPI_PASSWORD: perfectpassword
+  DATABASE_CLIENT: postgres
+  DATABASE_HOST: postgres
+  DATABASE_PORT: "5432"
+  DATABASE_NAME: awesomedb
+  DATABASE_USERNAME: amazinguser
+  DATABASE_PASSWORD: perfectpassword

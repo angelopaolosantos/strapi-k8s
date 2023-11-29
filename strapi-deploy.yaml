@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: strapi-app
+  name: strapi-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: strapi-app
+  template:
+    metadata:
+      labels:
+        app: strapi-app
+    spec:
+      containers:
+      - image: naskio/strapi
+        name: strapi-app
+        ports:
+        - containerPort: 1337
+        envFrom:
+        - configMapRef:
+            name: strapi-configuration
